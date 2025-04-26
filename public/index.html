@@ -28,13 +28,28 @@
     messages.appendChild(msg);
     messages.scrollTop = messages.scrollHeight;
   };
+ws.onopen = () => {
+  console.log('WebSocket соединение установлено');
+};
+
+ws.onerror = (error) => {
+  console.error('Ошибка WebSocket:', error);
+};
+
+ws.onclose = () => {
+  console.warn('WebSocket соединение закрыто');
+};
 
   function sendMessage() {
-    if (input.value.trim()) {
+  if (input.value.trim()) {
+    if (ws.readyState === WebSocket.OPEN) {
       ws.send(input.value);
       input.value = '';
+    } else {
+      console.error('WebSocket соединение не открыто');
     }
   }
+}
 </script>
 
 </body>
