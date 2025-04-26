@@ -1,0 +1,14 @@
+{
+    "name": "web-messenger",
+    "version": "1.0.0",
+    "description": "Минимальный веб-мессенджер на WebSocket для тестов",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2",
+      "ws": "^8.13.0"
+    }
+  }
+  
