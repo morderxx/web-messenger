@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Регистрация
-app.post('/register', async (req, res) => {
+app.post('/api/register', async (req, res) => {
   const { username, password } = req.body;
   if (!username || !password) return res.status(400).json({ error: 'Введите логин и пароль' });
 
@@ -42,7 +42,7 @@ app.post('/register', async (req, res) => {
 });
 
 // Авторизация
-app.post('/login', async (req, res) => {
+app.post('/api/login', async (req, res) => {
   const { username, password } = req.body;
   if (!username || !password) return res.status(400).json({ error: 'Введите логин и пароль' });
 
